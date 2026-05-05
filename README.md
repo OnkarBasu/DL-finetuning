@@ -149,7 +149,7 @@ The mathematical idea: rather than updating a large weight matrix W directly, Lo
 
 In our case 8.8 million parameters were trained out of 502 million total — just 1.75%. This made the entire fine-tuning process run in under 15 minutes on a T4 GPU.
 
-### LoRA Hyperparameters — Plain Language Explanation
+### LoRA Hyperparameters 
 
 **Rank (r = 16)**
 This is the most important LoRA setting. It controls the size of the adapter matrices — how many dimensions the low-rank approximation uses. Think of it as the adapter's learning capacity. We chose 16 because it gives the model enough room to learn from 1221 examples without memorising them. Too low (like 4 or 8) and the adapter cannot capture enough nuance. Too high (like 64) and it risks overfitting on a relatively small dataset.
