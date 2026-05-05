@@ -163,7 +163,7 @@ During each training step 5% of the adapter weights are randomly turned off. Thi
 **Target modules**
 LoRA adapters were applied to all seven projection layers in the transformer — the four attention layers (q_proj, k_proj, v_proj, o_proj) which handle how the model understands relationships between words, and the three feed-forward layers (gate_proj, up_proj, down_proj) which handle how it transforms and generates text. Targeting all seven gives the adapter maximum coverage.
 
-### Training Hyperparameters — Plain Language Explanation
+### Training Hyperparameters
 
 **Learning rate (1e-4 with cosine scheduler)**
 The learning rate controls how large a step the model takes when updating its weights after each batch. We used 1e-4 which is conservative and stable — a smaller step means less risk of the model forgetting its existing Hindi knowledge while it learns from our dataset. The cosine scheduler gradually reduces this rate as training progresses so the final updates are small and precise rather than overshooting.
